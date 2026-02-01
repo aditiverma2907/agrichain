@@ -1,0 +1,24 @@
+{
+  "name": "agrichain",
+  "version": "1.0.0",
+  "description": "Agricultural Supply Chain Management System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["agriculture", "supply-chain", "dbms"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0",
+    "bcrypt": "^5.1.1",
+    "express-session": "^1.17.3",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

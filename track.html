@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriChain - Track Product</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌾 AgriChain</h1>
+            <p>Track Your Product Journey</p>
+            <a href="login.html" class="btn btn-secondary">Back to Login</a>
+        </div>
+
+        <div class="track-container">
+            <h2>Track Product by ID</h2>
+            <div class="track-form">
+                <input type="text" id="trackProductId" placeholder="Enter Product ID" class="track-input">
+                <button onclick="trackProduct()" class="btn btn-primary">Track</button>
+            </div>
+
+            <div id="trackingResult" class="tracking-result"></div>
+        </div>
+    </div>
+
+    <div id="messageBox" class="message-box"></div>
+
+    <script src="track.js"></script>
+</body>
+</html>

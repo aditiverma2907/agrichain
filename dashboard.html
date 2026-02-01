@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriChain - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>🌾 AgriChain</h2>
+            </div>
+            <div class="nav-user">
+                <span id="userName"></span>
+                <span class="user-badge" id="userType"></span>
+                <button onclick="logout()" class="btn btn-logout">Logout</button>
+            </div>
+        </nav>
+
+        <div class="dashboard-content">
+            <div class="tabs">
+                <button id="btn-stock" class="tab-btn active" data-tab="stock" onclick="showTab('stock', this)">My Stock</button>
+                <button id="btn-sell" class="tab-btn" data-tab="sell" onclick="showTab('sell', this)">Sell Product</button>
+                <button id="btn-add" class="tab-btn" data-tab="add" onclick="showTab('add', this)">Add Product</button>
+                <button id="btn-transactions" class="tab-btn" data-tab="transactions" onclick="showTab('transactions', this)">Transaction History</button>
+            </div>
+
+            <!-- Stock Tab -->
+            <div id="stockTab" class="tab-content active">
+                <h2>My Current Stock</h2>
+                <div id="stockList" class="data-table"></div>
+            </div>
+
+            <!-- Sell Tab -->
+            <div id="sellTab" class="tab-content">
+                <h2>Sell Product</h2>
+                <form id="sellForm" class="dashboard-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sellProductId">Product ID *</label>
+                            <input type="text" id="sellProductId" required placeholder="Enter Product ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="sellQuantity">Quantity *</label>
+                            <input type="number" id="sellQuantity" step="0.01" required placeholder="Enter quantity">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sellPrice">Price (per unit) *</label>
+                            <input type="number" id="sellPrice" step="0.01" required placeholder="Enter price">
+                        </div>
+                        <div class="form-group">
+                            <label for="sellDate">Sale Date *</label>
+                            <input type="date" id="sellDate" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sellBuyerId">Buyer ID (leave empty for customer sale)</label>
+                        <input type="text" id="sellBuyerId" placeholder="Enter Buyer ID or leave empty">
+                        <small>Leave empty if selling to end customer</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sell Product</button>
+                </form>
+            </div>
+
+            <!-- Add Product Tab (Farmers only) -->
+            <div id="addTab" class="tab-content">
+                <h2>Add New Product</h2>
+                <form id="addProductForm" class="dashboard-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productId">Product ID *</label>
+                            <input type="text" id="productId" required placeholder="e.g., PROD001">
+                        </div>
+                        <div class="form-group">
+                            <label for="cropName">Crop Name *</label>
+                            <input type="text" id="cropName" required placeholder="e.g., Wheat, Rice">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="area">Area (acres)</label>
+                            <input type="number" id="area" step="0.01" placeholder="Enter area">
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity *</label>
+                            <input type="number" id="quantity" step="0.01" required placeholder="Enter quantity">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="unit">Unit</label>
+                        <select id="unit">
+                            <option value="kg">Kilograms (kg)</option>
+                            <option value="ton">Tons</option>
+                            <option value="quintal">Quintals</option>
+                            <option value="bag">Bags</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </form>
+            </div>
+
+            <!-- Transactions Tab -->
+            <div id="transactionsTab" class="tab-content">
+                <h2>Transaction History</h2>
+                <div id="transactionsList" class="data-table"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="messageBox" class="message-box"></div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

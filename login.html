@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriChain - Login/Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌾 AgriChain</h1>
+            <p>Agricultural Supply Chain Management</p>
+        </div>
+
+        <div class="form-container">
+            <!-- Login Form -->
+            <div id="loginForm" class="form-section active">
+                <h2>Login</h2>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginUserId">User ID</label>
+                        <input type="text" id="loginUserId" required placeholder="Enter your User ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <p class="switch-form">Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+                </form>
+                <div class="demo-credentials">
+                    <h4>Demo Credentials:</h4>
+                    <p>Farmer - ID: FARM001, Password: password123</p>
+                    <p>Retailer - ID: RET001, Password: password123</p>
+                    <p>Superstockist - ID: SUPER001, Password: password123</p>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerForm" class="form-section">
+                <h2>Register</h2>
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="regUserId">User ID *</label>
+                        <input type="text" id="regUserId" required placeholder="e.g., FARM001, RET001">
+                    </div>
+                    <div class="form-group">
+                        <label for="regName">Full Name *</label>
+                        <input type="text" id="regName" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email *</label>
+                        <input type="email" id="regEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password *</label>
+                        <input type="password" id="regPassword" required placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                        <label for="regUserType">User Type *</label>
+                        <select id="regUserType" required>
+                            <option value="">Select Type</option>
+                            <option value="farmer">Farmer</option>
+                            <option value="retailer">Retailer</option>
+                            <option value="superstockist">Superstockist</option>
+                            <option value="distributor">Distributor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Phone</label>
+                        <input type="tel" id="regPhone" placeholder="Enter phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="regAddress">Address</label>
+                        <textarea id="regAddress" placeholder="Enter your address" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <p class="switch-form">Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Track Product Section -->
+        <div class="track-section">
+            <h3>Track Product by ID</h3>
+            <p>Customers can track product journey without login</p>
+            <a href="track.html" class="btn btn-secondary">Track Product</a>
+        </div>
+    </div>
+
+    <div id="messageBox" class="message-box"></div>
+
+    <script src="login.js"></script>
+</body>
+</html>
